@@ -1,7 +1,8 @@
-<!doctype html>
-<html>
-  <head>
-    <title>Movie Search Results</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Favorites</title>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
@@ -12,9 +13,8 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="/stylesheets/main.css">
-  </head>
-  <body>
-
+</head>
+<body>
     <nav class="navbar navbar-default">
       <div class="container">
         <ul class="nav navbar-nav">
@@ -23,34 +23,24 @@
         </ul>
       </div>
     </nav>
+
     <div class="container">
       <div class="row">
         <div class="col-md-12">
+          <h1>My favorites</h1>
           <ul id="results-list">
-            <!-- Loop over all the films in movieList -->
-            <% movieList.forEach(function (film) {%>
 
-            <!-- Only show the results that are movies -->
-            <!-- (i.e., do not show TV shows) -->
-            <% if (film.Type === "movie") { %>
-
+            <% favoritesList.forEach(function (film) {%>
             <!-- Show the title and the imdbID -->
             <li>
-              <a href="/movie/<%= film.imdbID %>" method="GET">
-                <%=film.Title%>
-              </a>
-              <div class="film-id"><%=film.imdbID%></div>
+                <%=film.title%>
+                <a class="remove" href="/favorites" method="POST">Remove</a>
             </li>
-
-            <!-- Close the `if` -->
-            <% } %>
-
-            <!-- Close the `forEach` -->
             <% }) %>
           </ul>
         </div>
       </div>
     </div>
 
-  </body>
+</body>
 </html>

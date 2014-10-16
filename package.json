@@ -12,5 +12,13 @@
     "ejs": "^1.0.0",
     "express": "^4.6.1",
     "request": "^2.45.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lasazawa/omdb_crud_lab.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lasazawa/omdb_crud_lab/issues"
+  },
+  "homepage": "https://github.com/lasazawa/omdb_crud_lab"
 }

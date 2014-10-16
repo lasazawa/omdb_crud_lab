@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/stylesheets/main.css">
+</head>
+<body>
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <ul class="nav navbar-nav">
+          <li><a href="/">Search</a></li>
+          <li><a href="/favorites">Favorites</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+        <div class="row" id="film-detail-head">
+            <div class="col-md-8 col-sm-8 col-xs-9">
+                <h1><%=filmDetails.Title %></h1>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-3">
+                <form action="/favorites" method="POST" class="">
+                    <input type="hidden" name="movie[title]" value="<%=filmDetails.Title %>">
+                    <button class="btn btn-default favorite" type="submit">Favorite</button>
+                </form>
+            </div>
+        </div>
+        <div class="row" id="film-details">
+            <div class="col-md-12">
+                <div class="col-md-8 col-sm-8 col-xs-12">
+                    <ul>
+                        <li><h5>Year</h5> <%=filmDetails.Year %></li>
+                        <li><h5>Rating</h5><%=filmDetails.Rated %></li>
+                        <li><h5>Genre</h5><%=filmDetails.Genre %></li>
+                    </ul>
+                    <h5>Description</h5>
+                    <p><%=filmDetails.Plot %></p>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <ul>
+                        <li><h5>Director</h5><%=filmDetails.Director %></li>
+                        <li><h5>Actors</h5><%=filmDetails.Actors %></li>
+                        <li><h5>Writer</h5><%=filmDetails.Writer %></li>
+                    </ul>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
